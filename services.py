@@ -1,25 +1,37 @@
 import os
+import subprocess
+import shutil
+from datetime import date
 import time
 def creatWorkstation():
+    directoryWay= input("Past you directory Way :  ")
     time.sleep(1)
     print (".")
     time.sleep(1)
     print(".")
     time.sleep(3)
     print ("Sucess")
-    directoryWorkStation = r"C:\\Users\\BRYAN\\Desktop\\repositorio\\project\\WorkStation"
+    directoryWorkStation = directoryWay+"\\Workstation"
     os.mkdir(directoryWorkStation)
-    directoryFiles= r"C:\\Users\\BRYAN\\Desktop\\repositorio\\project\\WorkStation\\Files"
+    directoryFiles= directoryWay+"\\WorkStation\\Files"
     os.mkdir(directoryFiles)
-    arquivo = open(r"C:\\Users\\BRYAN\\Desktop\\repositorio\\project\\WorkStation\\file1.py", 'a')
+    arquivo = open(directoryWay+"\\WorkStation\\file1.py", 'a')
     arquivo.write ("")
     arquivo.close()
-    arquivo = open(r"C:\\Users\\BRYAN\\Desktop\\repositorio\\project\\WorkStation\\file2.py", 'a')
+    arquivo = open(directoryWay+"\\WorkStation\\file2.py", 'a')
     arquivo.write ("")
     arquivo.close()
-    arquivo = open(r"C:\\Users\\BRYAN\\Desktop\\repositorio\\project\\WorkStation\\file3.py", 'a')
+    arquivo = open(directoryWay+"\\WorkStation\\file3.py", 'a')
     arquivo.write ("")
     arquivo.close()
-    arquivo = open(r"C:\\Users\\BRYAN\\Desktop\\repositorio\\project\\WorkStation\\Readme.txt", 'a')
+    arquivo = open(directoryWay+"\\WorkStation\\Readme.txt", 'a')
     arquivo.write ("RENOMEIE E ULTILIZE OS ARQUIVOS")
     arquivo.close()
+
+def copyFiles():
+    directory= input("Select name directory: ")
+    orig = input("Directory past: ")
+    dest = input("Directory way:")+"\\"+directory
+    shutil.copytree(orig, dest)
+    time.sleep(3)
+    print ("Sucess")
